@@ -1,13 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
+
+@font-face {
+    font-family:'SUIT';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'SUIT';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight:bold;
+    font-style:normal;
+}
+
 :root{
     --bg:#FAFAFA;
     --line:#E0E0E0;
     --text:#141414;
+    --point:#9650f0;
 }
 
 body{
     margin:0;
     background-color:var(--bg);
     color:var(--text);
+    font-family:'Inter','SUIT'
+}
+
+a{
+    text-decoration:none;
+    color:var(--point);
 }
 
 input{
@@ -16,6 +39,7 @@ input{
     outline:none;
     background-color:#00000000;
     color:var(--text);
+    font-family:'Inter','SUIT'
     font-size:16px;
 }
 
@@ -40,4 +64,16 @@ input{
 #content{
     width:max(50%,300px);
     margin:0 auto;
+}
+
+.info{
+    
+}
+
+.caution{
+    
+}
+
+.danger{
+    
 }
