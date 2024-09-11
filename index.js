@@ -6,7 +6,7 @@ if(name){
   fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/docs/${name}`)
     .then(response => response.text())
     .then(data => {
-        document.querySelector('#content').innerHTML = `<h1>${name}</h1>`;
+        document.querySelector('#content').innerHTML = `<h1>${name.replace('.md', '')}</h1>`;
         document.querySelector('#content').innerHTML += marked.parse(data);
     })
     .catch(() => {
@@ -20,3 +20,14 @@ fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
   .then(data => {list = data;});
 
 //문서 검색
+function search(){
+    
+    const keyword = document.querySelector('input').value;
+    let result = list.filter(doc => doc.includes(keyword));
+    
+    result.sort((a,b) => a.length-b.length || a.localeCompare(b));
+    result = result.slice(0,5);
+    result.forEach(doc => {
+        document.querySelector('#result').append(`<a href="/?doc=${doc}"><div>${doc.replace('.md', '')}</div></a>`);
+    });
+}
