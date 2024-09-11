@@ -8,8 +8,16 @@
     <link rel="stylesheet" href="./index.css">
   </head>
   <body>
-  <div id="navbar"><div id="inputbox"><input spellcheck="false"></div></div>
-  <div id="contentbox">
+  <div id="navbar">
+    <div></div>
+    <div id="inputbox">
+        <input spellcheck="false" onfocus="document.querySelector('resultbox').display='block';" onblur="document.querySelector('resultbox').display='none';">
+    </div>
+  </div>
+  <div id="resultbox">
+    <div id="result"></div>
+  </div>
+  <div id="contentbox" onclick="document.querySelector('resultbox').display='none';">
     <div id="content"></div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
