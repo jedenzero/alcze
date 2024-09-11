@@ -34,16 +34,19 @@ a{
 }
 
 input{
+    width:100%;
     padding:0;
     border:none;
     outline:none;
     background-color:#00000000;
-    color:var(--text);
-    font-family:'Inter','SUIT'
+    color:var(--bg);
+    font-family:'Inter','SUIT';
     font-size:16px;
 }
 
 #navbar{
+    display:flex;
+    justify-content:space-between;
     position:fixed;
     top:0;
     width:100%;
@@ -54,10 +57,24 @@ input{
 }
 
 #inputbox{
-    
+    width:150px;
+    height:50px;
+    background-color:var(--text);
+}
+
+#resultbox{
+    position:fixed;
+    top:70px;
+    width:100%;
+}
+
+#result{
+    width:max(50%,300px);
+    margin:0 auto;
 }
 
 #contentbox{
+    width:100%;
     margin-top:70px;
 }
 
