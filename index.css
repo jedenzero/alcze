@@ -1,0 +1,43 @@
+:root{
+    --bg:#FAFAFA;
+    --line:#E0E0E0;
+    --text:#141414;
+}
+
+body{
+    margin:0;
+    background-color:var(--bg);
+    color:var(--text);
+}
+
+input{
+    padding:0;
+    border:none;
+    outline:none;
+    background-color:#00000000;
+    color:var(--text);
+    font-size:16px;
+}
+
+#navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:50px;
+    background-color:var(--bg);
+    color:var(--text);
+    border-bottom:1px solid var(--line);
+}
+
+#inputbox{
+    
+}
+
+#contentbox{
+    margin-top:70px;
+}
+
+#content{
+    width:max(50%,300px);
+    margin:0 auto;
+}
