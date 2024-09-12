@@ -68,13 +68,19 @@ input{
 
 #resultbox{
     position:fixed;
-    top:70px;
+    top:50px;
     width:100%;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
 }
 
 #result{
     width:max(50%,300px);
     margin:0 auto;
+}
+
+#result a{
+    color:var(--text);
 }
 
 #contentbox{
