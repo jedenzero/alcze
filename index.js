@@ -23,6 +23,7 @@ fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
 
 //문서 검색
 function search(){
+    document.querySelector('#result').innerHTML = '';
     
     const keyword = document.querySelector('input').value;
     let result = list.filter(doc => doc.includes(keyword));
