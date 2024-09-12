@@ -17,7 +17,9 @@ if(name){
 //문서 목록 가지고 오기
 fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
   .then(response => response.json())
-  .then(data => {list = data;});
+  .then(data => {
+    list = data.map(obj => obj['name']);
+  });
 
 //문서 검색
 function search(){
