@@ -14,6 +14,11 @@
     font-style:normal;
 }
 
+::selection{
+    background-color:var(--point);
+    color:var(--bg);
+}
+
 :root{
     --bg:#FAFAFA;
     --line:#E0E0E0;
@@ -47,6 +52,7 @@ input{
 }
 
 #navbar{
+    z-index:1;
     display:flex;
     justify-content:space-between;
     position:fixed;
@@ -87,6 +93,7 @@ input{
 
 #contentbox{
     width:100%;
+    min-height:500px;
     margin-top:70px;
 }
 
