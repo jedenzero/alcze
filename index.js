@@ -30,6 +30,6 @@ function search(){
     result.sort((a,b) => a.length-b.length || a.localeCompare(b));
     result = result.slice(0,5);
     result.forEach(doc => {
-        document.querySelector('#result').append(`<a href="/?doc=${doc}"><div>${doc.replace('.md', '')}</div></a>`);
+        document.querySelector('#result').innerHTML += `<a href="/?doc=${doc}"><div>${doc.replace('.md', '')}</div></a>`;
     });
 }
