@@ -23,6 +23,7 @@
     --bg:#FAFAFA;
     --line:#E0E0E0;
     --text:#141414;
+    --weak:#3C3C3C;
     --point:#9650f0;
 }
 
@@ -31,11 +32,17 @@ body{
     background-color:var(--bg);
     color:var(--text);
     font-family:'Inter','SUIT'
+    font-size:14px;
+    word-break:keep-all;
 }
 
 a{
     text-decoration:none;
     color:var(--point);
+}
+
+p{
+    margin:0;
 }
 
 input{
@@ -50,6 +57,17 @@ input{
     font-family:'Inter','SUIT';
     font-size:16px;
 }
+
+blockquote{
+    width:max-content;
+    margin:0;
+    margin-bottom:20px;
+    border:2px solid var(--weak);
+    border-left:6px solid var(--weak);
+    color:var(--weak);
+}
+
+blockquote:hover
 
 #navbar{
     z-index:1;
