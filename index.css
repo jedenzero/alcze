@@ -62,6 +62,7 @@ blockquote{
     width:max-content;
     margin:0;
     margin-bottom:20px;
+    padding:20px;
     border:2px solid var(--weak);
     border-left:6px solid var(--weak);
     color:var(--weak);
