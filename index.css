@@ -67,8 +67,6 @@ blockquote{
     color:var(--weak);
 }
 
-blockquote:hover
-
 #navbar{
     z-index:1;
     display:flex;
