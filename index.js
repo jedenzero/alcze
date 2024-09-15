@@ -7,7 +7,7 @@ if(name){
     .then(response => response.text())
     .then(data => {
         document.querySelector('#content').innerHTML = `<h1>${name}</h1>`;
-        document.querySelector('#content').innerHTML += marked.parse(data);
+        document.querySelector('#content').innerHTML += parse(data);
     })
     .catch(() => {
         document.querySelector('#content').innerHTML = `<div class="danger">존재하지 않는 문서입니다.</div>`;
@@ -33,4 +33,10 @@ function search(){
     result.forEach(doc => {
         document.querySelector('#result').innerHTML += `<a href="./?doc=${doc}"><div>${doc}</div></a>`;
     });
+}
+
+function parse(doc){
+  doc = doc.replace('\[\[([^\[\]]+)\]\]', '<a href="doc=$1">$1</a>');
+  doc = marked.parse(doc);
+  doc = doc.replace('<a href="([^"]+)">', '<a href="./?doc=$1">');
 }
