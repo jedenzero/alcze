@@ -32,7 +32,7 @@ body{
     background-color:var(--bg);
     color:var(--text);
     font-family:'Inter','SUIT';
-    font-size:14px;
+    font-size:15px;
     word-break:keep-all;
 }
 
@@ -120,13 +120,28 @@ blockquote{
 }
 
 .info{
-    
+    width:max-content;
+    margin-bottom:20px;
+    padding:20px;
+    border:2px solid #2850f0;
+    border-left:6px solid #2850f0;
+    background-color:#2850f028;
 }
 
 .caution{
-    
+    width:max-content;
+    margin-bottom:20px;
+    padding:20px;
+    border:2px solid #f0a028;
+    border-left:6px solid #f0a028;
+    background-color:#f0a02828;
 }
 
 .danger{
-    
+    width:max-content;
+    margin-bottom:20px;
+    padding:20px;
+    border:2px solid #f05028;
+    border-left:6px solid #f05028;
+    background-color:#f0502828;
 }
