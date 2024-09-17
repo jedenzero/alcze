@@ -123,25 +123,25 @@ blockquote{
     width:max-content;
     margin-bottom:20px;
     padding:20px;
-    border:2px solid #2850f0;
-    border-left:6px solid #2850f0;
-    background-color:#2850f028;
+    border-left:#3c14dc;
+    background-color:#3c14dc14;
+    color:#281450;
 }
 
 .caution{
     width:max-content;
     margin-bottom:20px;
     padding:20px;
-    border:2px solid #f0a028;
-    border-left:6px solid #f0a028;
-    background-color:#f0a02828;
+    border-left:#dca014;
+    background-color:#dca01414;
+    color:#502814;
 }
 
 .danger{
     width:max-content;
     margin-bottom:20px;
     padding:20px;
-    border:2px solid #f05028;
-    border-left:6px solid #f05028;
-    background-color:#f0502828;
+    border-left:#dc143c;
+    background-color:#dc143c14;
+    color:#501428;
 }
