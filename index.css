@@ -123,7 +123,7 @@ blockquote{
     width:max-content;
     margin-bottom:20px;
     padding:20px;
-    border-left:#3c14dc;
+    border-left:4px solid #3c14dc;
     background-color:#3c14dc14;
     color:#281450;
 }
@@ -132,7 +132,7 @@ blockquote{
     width:max-content;
     margin-bottom:20px;
     padding:20px;
-    border-left:#dca014;
+    border-left:4px solid #dca014;
     background-color:#dca01414;
     color:#502814;
 }
@@ -141,7 +141,7 @@ blockquote{
     width:max-content;
     margin-bottom:20px;
     padding:20px;
-    border-left:#dc143c;
+    border-left:4px solid #dc143c;
     background-color:#dc143c14;
     color:#501428;
 }
