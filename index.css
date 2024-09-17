@@ -45,6 +45,16 @@ p{
     margin:0;
 }
 
+ul{
+    padding-left:25px;
+}
+
+img{
+    max-width:300px;
+    margin-bottom:20px;
+    border:2px solid var(--text);
+}
+
 input{
     box-sizing:border-box;
     width:100%;
@@ -117,6 +127,10 @@ blockquote{
 #content{
     width:max(50%,300px);
     margin:0 auto;
+}
+
+#content>p{
+    margin-bottom:20px;
 }
 
 .info{
