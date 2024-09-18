@@ -39,6 +39,6 @@ function parse(doc){
   doc = marked.parse(doc);
   doc = doc.replace(/<a href="([^"]+)">/g, '<a href="./?doc=$1">');
   doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="./?doc=$1">$1</a>');
-  doc = doc.replace(/<img src="([^"]+)"/g, '<a href="./imgs/$1"');
+  doc = doc.replace(/<img src="([^"]+)"/g, '<img src="./imgs/$1"');
   return doc;
 }
