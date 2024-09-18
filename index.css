@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
-
-@font-face {
-    font-family:'SUIT';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
-    font-weight:normal;
-    font-style:normal;
-}
-
-@font-face {
-    font-family:'SUIT';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
-    font-weight:bold;
-    font-style:normal;
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 ::selection{
     background-color:var(--point);
@@ -31,9 +18,14 @@ body{
     margin:0;
     background-color:var(--bg);
     color:var(--text);
-    font-family:'Inter','SUIT';
+    font-family:'Inter','Pretendard';
+    font-weight:300;
     font-size:15px;
     word-break:keep-all;
+}
+
+h1,h2,h3,h4,h5,h6,strong{
+    font-weight:600;
 }
 
 a{
@@ -64,7 +56,7 @@ input{
     outline:none;
     background-color:#00000000;
     color:var(--bg);
-    font-family:'Inter','SUIT';
+    font-family:'Inter','Pretendard';
     font-size:16px;
 }
 
