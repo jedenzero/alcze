@@ -37,6 +37,7 @@ function search(){
 
 function parse(doc){
   doc = marked.parse(doc);
+  doc = doc.replace(/<<([^\n]+)<\/p>((?:\n<p>[^<]+<\/p>)+)\n<p>>>/g,'</p><div class="$1">$2</div><p>');
   doc = doc.replace(/<a href="([^"]+)">/g, '<a href="./?doc=$1">');
   doc = doc.replace(/(?<=<a href="[^"]*)_(?=[^">]*">)/g, ' ');
   doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="./?doc=$1">$1</a>');
