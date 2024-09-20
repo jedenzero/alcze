@@ -152,3 +152,15 @@ blockquote{
     background-color:#dc143c14;
     color:#501428;
 }
+
+.double{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    column-gap:20px;
+    margin-bottom:20px;
+}
+
+@media(max-width:500px){
+    grid-template-columns:1fr;
+    row-gap:20px;
+}
