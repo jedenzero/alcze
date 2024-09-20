@@ -61,7 +61,8 @@ input{
 }
 
 blockquote{
-    width:min(max-content,300px);
+    max-width:300px;
+    width:max-content;
     margin:0;
     margin-bottom:20px;
     padding:20px;
