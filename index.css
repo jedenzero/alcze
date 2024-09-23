@@ -84,6 +84,16 @@ blockquote{
     border-bottom:1px solid var(--line);
 }
 
+#logo{
+    padding-top:5px;
+    padding-left:10px;
+}
+
+#logo img{
+    margin:0;
+    border:none;
+}
+
 #inputbox{
     display:flex;
     align-items:center;
