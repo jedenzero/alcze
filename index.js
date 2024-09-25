@@ -36,7 +36,7 @@ function search(){
 }
 
 function parse(doc){
-  if (doc.match(/^<<[^\n>]+>>\n/)){
+  if(doc.match(/^<<[^\n>]+>>\n/)){
     let theme = '';
     doc = doc.replace(/^<<([^\n>]+)>>\n/,(match, captured_theme)=>{
       theme = captured_theme;
