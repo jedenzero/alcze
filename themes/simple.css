@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Stix+Two+Text:wght@300;700&display=swap');
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap');
 @font-face {
     font-family:'Kpwb';
     font-style:normal;
@@ -9,15 +8,16 @@
 }
 @font-face {
     font-family:'Kpwb';
-    font-style:normal;
+    font-style:bold;
     font-weight:400;
     src:local('KoPubWorldBatang'),
         url('https://cdn.jsdelivr.net/npm/font-kopubworld@1.0/fonts/KoPubWorld-Batang-Medium.woff2') format('woff2'),
 }
-
-::selection{
-    background-color:var(--point);
-    color:var(--bg);
+@font-face {
+    font-family:'Paperlogy-8ExtraBold';
+    src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight:800;
+    font-style:normal;
 }
 
 :root{
@@ -32,14 +32,18 @@ body{
     margin:0;
     background-color:var(--bg);
     color:var(--text);
-    font-family:'Stix Two Text','kpbw';
-    font-weight:300;
+    font-family:'STIX Two Text','kpwb';
     font-size:15px;
     word-break:keep-all;
 }
 
-h1,h2,h3,h4,h5,h6,strong{
-    font-weight:600;
+h1{
+    font-size:1.4rem;
+    font-family:'Paperlogy-8ExtraBold';
+}
+
+h2{
+    font-size:1rem;
 }
 
 a{
@@ -51,8 +55,8 @@ p{
     margin:0;
 }
 
-ul{
-    padding-left:25px;
+ol,ul{
+    padding-left:20px;
 }
 
 img{
@@ -70,7 +74,7 @@ input{
     outline:none;
     background-color:#00000000;
     color:var(--bg);
-    font-family:'Stix two text','kpbw';
+    font-family:'STIX Two Text','kpwb';
     font-size:16px;
 }
 
