@@ -44,7 +44,7 @@ function parse(doc){
     });
     document.querySelector('#theme_default').disabled = true;
     
-    const theme_link = createElement('link');
+    const theme_link = document.createElement('link');
     theme_link.rel = 'stylesheet';
     theme_link.href = `./themes/${theme}.css`;
     document.head.appendChild(theme_link);
