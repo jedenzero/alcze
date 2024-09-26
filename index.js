@@ -42,12 +42,12 @@ function parse(doc){
       theme = captured_theme;
       return '';
     });
-    document.querySelector('#theme_default').disabled = true;
     
     const theme_link = document.createElement('link');
     theme_link.rel = 'stylesheet';
     theme_link.href = `./themes/${theme}.css`;
     document.head.appendChild(theme_link);
+    document.querySelector('#theme_default').disabled = true;
   }
   doc = marked.parse(doc);
   doc = doc.replace(/<a href="([^"]+)">/g, '<a href="./?doc=$1">');
