@@ -20,6 +20,11 @@
     font-style:normal;
 }
 
+::selection{
+    background-color:var(--point);
+    color:var(--bg);
+}
+
 :root{
     --bg:#FAFAFA;
     --line:#E0E0E0;
@@ -38,11 +43,14 @@ body{
 }
 
 h1{
+    margin:0;
     font-size:1.2rem;
     font-family:'Paperlogy-8ExtraBold';
 }
 
 h2{
+    margin-top:30px;
+    margin-bottom:10px;
     font-size:0.8rem;
     font-weight:normal;
 }
@@ -50,6 +58,10 @@ h2{
 a{
     text-decoration:none;
     color:var(--point);
+}
+
+u{
+    text-underline-offset:2px;
 }
 
 p{
@@ -80,7 +92,7 @@ input{
 }
 
 blockquote{
-    width:300px;
+    max-width:300px;
     margin:0;
     margin-bottom:20px;
     padding:20px;
