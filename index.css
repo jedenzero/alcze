@@ -9,7 +9,7 @@
 :root{
     --bg:#FAFAFA;
     --line:#E0E0E0;
-    --text:#141414;
+    --strong:#141414;
     --weak:#3C3C3C;
     --point:#9650f0;
 }
@@ -17,12 +17,16 @@
 body{
     margin:0;
     background-color:var(--bg);
-    color:var(--text);
+    color:var(--weak);
     font-family:'Inter','Pretendard';
     font-weight:400;
     font-size:15px;
     word-break:keep-all;
     line-height:1.3;
+}
+
+h1{
+    margin-bottom:20px;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -44,6 +48,20 @@ p{
     margin:0;
 }
 
+table{
+    margin-bottom:20px;
+    border-collapse:collapse;
+}
+
+th{
+    font-weight:400;
+}
+
+th,td{
+    padding:15px;
+    border:1px solid var(--line);
+}
+
 ul{
     padding-left:25px;
 }
@@ -51,7 +69,7 @@ ul{
 img{
     max-width:300px;
     margin-bottom:20px;
-    border:2px solid var(--text);
+    border:2px solid var(--strong);
 }
 
 input{
@@ -87,7 +105,7 @@ blockquote{
     width:100%;
     height:50px;
     background-color:var(--bg);
-    color:var(--text);
+    color:var(--strong);
     border-bottom:1px solid var(--line);
 }
 
@@ -107,7 +125,7 @@ blockquote{
     align-items:center;
     width:150px;
     height:50px;
-    background-color:var(--text);
+    background-color:var(--strong);
 }
 
 #resultbox{
@@ -126,7 +144,7 @@ blockquote{
 }
 
 #result a{
-    color:var(--text);
+    color:var(--strong);
 }
 
 #contentbox{
@@ -169,6 +187,36 @@ blockquote{
     border-left:4px solid #dc143c;
     background-color:#dc143c14;
     color:#501428;
+}
+
+.framed{
+    position:relative;
+    max-width:300px;
+    width:max-content;
+    margin-bottom:20px;
+    padding:25px;
+}
+
+.framed::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:20px;
+    height:20px;
+    border-top:4px solid var(--weak);
+    border-left:4px solid var(--weak);
+}
+
+.framed::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:20px;
+    height:20px;
+    border-bottom:4px solid var(--weak);
+    border-right:4px solid var(--weak);
 }
 
 .double{
