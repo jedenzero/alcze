@@ -86,6 +86,7 @@ input{
 }
 
 blockquote{
+    box-sizing:border-box;
     max-width:300px;
     width:max-content;
     margin:0;
@@ -163,6 +164,8 @@ blockquote{
 }
 
 .info{
+    box-sizing:border-box;
+    max-width:300px;
     width:max-content;
     margin-bottom:20px;
     padding:20px;
@@ -172,6 +175,8 @@ blockquote{
 }
 
 .caution{
+    box-sizing:border-box;
+    max-width:300px;
     width:max-content;
     margin-bottom:20px;
     padding:20px;
@@ -181,6 +186,8 @@ blockquote{
 }
 
 .danger{
+    box-sizing:border-box;
+    max-width:300px;
     width:max-content;
     margin-bottom:20px;
     padding:20px;
@@ -190,6 +197,7 @@ blockquote{
 }
 
 .framed{
+    box-sizing:border-box;
     position:relative;
     max-width:300px;
     width:max-content;
