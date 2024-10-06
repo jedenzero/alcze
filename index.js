@@ -47,7 +47,6 @@ function parse(doc){
     theme_link.rel = 'stylesheet';
     theme_link.href = `./themes/${theme}.css`;
     document.head.appendChild(theme_link);
-    document.querySelector('#theme_default').disabled = true;
   }
   doc = marked.parse(doc);
   doc = doc.replace(/<a href="([^"]+)">/g, '<a href="./?doc=$1">');
