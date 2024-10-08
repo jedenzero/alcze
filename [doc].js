@@ -5,10 +5,22 @@ import './index.css';
 
 function App(){
     const [content, setContent] = useState('');
-    const name = [doc];
+    const [doc, setDoc] = useState(window.location.hash.slice(1) || 'index');
 
     useEffect(() => {
-        fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/docs/${name}.md`)
+        const handleHashChange = () => {
+            setDoc(window.location.hash.slice(1) || 'index');
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
+    }, []);
+
+    useEffect(() => {
+        fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/docs/${doc}.md`)
             .then(response => {
                 if (!response.ok) throw new Error('문서를 불러오는 데 실패했습니다.');
                 return response.text();
@@ -19,7 +31,7 @@ function App(){
             .catch(() => {
                 setContent('<div class="danger">존재하지 않는 문서입니다.</div>');
             });
-    }, [name]);
+    }, [doc]);
 
     return (
         <div>
