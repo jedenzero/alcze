@@ -13,7 +13,6 @@ export default function Doc() {
         if (doc) {
             fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/docs/${doc}.md`)
                 .then(response => {
-                    if (!response.ok) throw new Error('문서를 불러오는 데 실패했습니다.');
                     return response.text();
                 })
                 .then(data => {
@@ -23,7 +22,7 @@ export default function Doc() {
                     setContent('<div class="danger">존재하지 않는 문서입니다.</div>');
                 });
 
-            fetch(``)
+            fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
                 .then(response => response.json())
                 .then(data => {
                     const documents = data.map(obj => obj['name'].replace('.md', ''));
