@@ -10,9 +10,12 @@ export default function Doc() {
     const { doc } = router.query;
 
     useEffect(() => {
-        if (doc) {
+        if (router.isReady && doc) {
             fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/docs/${doc}.md`)
                 .then(response => {
+                    if (!response.ok) {
+                        throw new Error('문서를 불러오는 데 실패했습니다.');
+                    }
                     return response.text();
                 })
                 .then(data => {
@@ -29,7 +32,7 @@ export default function Doc() {
                     setList(documents);
                 });
         }
-    }, [doc]);
+    }, [router.isReady, doc]);
 
     const search = (keyword) => {
         const filteredResults = list.filter(item => item.includes(keyword));
