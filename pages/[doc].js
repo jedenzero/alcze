@@ -11,7 +11,7 @@ export default function Doc() {
 
     useEffect(() => {
         if (router.isReady && doc) {
-            fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/docs/${doc}.md`)
+            fetch(`/docs/${doc}.md`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('문서를 불러오는 데 실패했습니다.');
@@ -25,7 +25,7 @@ export default function Doc() {
                     setContent('<div class="danger">존재하지 않는 문서입니다.</div>');
                 });
 
-            fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
+            fetch(`https://api.github.com/repos/jedenzero/alcze/contents/public/docs`)
                 .then(response => response.json())
                 .then(data => {
                     const documents = data.map(obj => obj['name'].replace('.md', ''));
@@ -50,16 +50,16 @@ export default function Doc() {
 
             const themeLink = document.createElement('link');
             themeLink.rel = 'stylesheet';
-            themeLink.href = `https://jedenzero.github.io/alcze/themes/${theme}.css`;
+            themeLink.href = `/themes/${theme}.css`;
             document.head.appendChild(themeLink);
             document.querySelector('#theme_default').disabled = true;
         }
 
         doc = marked.parse(doc);
-        doc = doc.replace(/<a href="([^"]+)">/g, '<a href="./$1">');
+        doc = doc.replace(/<a href="([^"]+)">/g, '<a href="/$1">');
         doc = doc.replace(/(?<=<a href="[^"]*)_(?=[^">]*">)/g, ' ');
-        doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="./$1">$1</a>');
-        doc = doc.replace(/<img src="([^"]+)"/g, '<img src="https://jedenzero.github.io/alcze/imgs/$1"');
+        doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="/$1">$1</a>');
+        doc = doc.replace(/<img src="([^"]+)"/g, '<img src="/imgs/$1"');
         return doc;
     };
 
@@ -67,7 +67,7 @@ export default function Doc() {
         <div>
             <div id="navbar">
                 <div id="logo">
-                    <img src="https://jedenzero.github.io/alcze/imgs/알체_로고_색상.svg" alt="알체 로고"/>
+                    <img src="/imgs/알체_로고_색상.svg" alt="알체 로고"/>
                 </div>
                 <div id="inputbox">
                     <input
@@ -80,7 +80,7 @@ export default function Doc() {
             <div id="resultbox" style={{ display: result.length ? 'block' : 'none' }}>
                 <div id="result">
                     {result.map((doc, index) => (
-                        <a key={index} href={`./${doc}`}>
+                        <a key={index} href={`/${doc}`}>
                             <div>{doc}</div>
                         </a>
                     ))}
