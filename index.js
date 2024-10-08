@@ -1,4 +1,4 @@
-const name = new URLSearchParams(location.search).get('doc');
+const name = window.location.pathname.slice(1);
 let list = [];
 
 if(name){
@@ -49,9 +49,9 @@ function parse(doc){
     document.head.appendChild(theme_link);
   }
   doc = marked.parse(doc);
-  doc = doc.replace(/<a href="([^"]+)">/g, '<a href="./?doc=$1">');
+  doc = doc.replace(/<a href="([^"]+)">/g, '<a href="./$1">');
   doc = doc.replace(/(?<=<a href="[^"]*)_(?=[^">]*">)/g, ' ');
-  doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="./?doc=$1">$1</a>');
+  doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="./$1">$1</a>');
   doc = doc.replace(/<img src="([^"]+)"/g, '<img src="./imgs/$1"');
   return doc;
 }
