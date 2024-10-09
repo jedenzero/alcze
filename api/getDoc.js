@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         }
 
         const data = await response.text();
-        const {doc, theme} = parseMarkdown(data);
+        const {doc, theme} = parseMarkdown(data, docName);
         res.status(200).json({doc, theme});
     } catch (error) {
         console.error('Error fetching document:', error);
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     }
 }
 
-const parseMarkdown = (doc) => {
+const parseMarkdown = (doc, docName) => {
     let theme = '';
     if (doc.match(/^<<[^\n>]+>>\n/)) {
         doc = doc.replace(/^<<([^\n>]+)>>\n/, (match, captured_theme) => {
