@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const response = await fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/public/docs/${encodeURIComponent(docName)}.md`);
+        const response = await fetch(`https://raw.githubusercontent.com/jedenzero/alcze/main/docs/${encodeURIComponent(docName)}.md`);
         if (!response.ok) {
             throw new Error('문서를 불러오는 데 실패했습니다.');
         }
