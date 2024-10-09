@@ -55,7 +55,7 @@ export default function Doc() {
     return (
         <div>
             <Head>
-                <title>{docName}</title>
+                <title>{docName} - ✨alcze</title>
             </Head>
             <div id="navbar">
                 <div id="logo">
