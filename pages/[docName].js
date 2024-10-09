@@ -6,21 +6,23 @@ export default function Doc() {
     const [content, setContent] = useState('');
     const [list, setList] = useState([]);
     const [result, setResult] = useState([]);
+    const [theme, setTheme] = useState('');
     const router = useRouter();
     const { docName } = router.query;
 
     useEffect(() => {
         if (router.isReady && docName) {
             console.log(docName);
-            fetch(`/docs/${encodeURI(docName)}.md`)
+            fetch(`/api/getDocs?docName=${encodeURIComponent(docName)}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('문서를 불러오는 데 실패했습니다.');
                     }
-                    return response.text();
+                    return response.json();
                 })
                 .then(data => {
-                    setContent(parseMarkdown(data));
+                    setContent(data.doc);
+                    setTheme(data.theme);
                 })
                 .catch(() => {
                     setContent('<div class="danger">존재하지 않는 문서입니다.</div>');
@@ -34,7 +36,16 @@ export default function Doc() {
                 });
         }
     }, [router.isReady, docName]);
-
+    
+    useEffect(() => {
+        if (theme) {
+            const themeLink = document.createElement('link');
+            themeLink.rel = 'stylesheet';
+            themeLink.href = `/themes/${theme}.css`;
+            document.head.appendChild(themeLink);
+        }
+    }, [theme]);
+    
     const search = (keyword) => {
         const filteredResults = list.filter(item => item.includes(keyword));
         filteredResults.sort((a, b) => a.length - b.length || a.localeCompare(b));
