@@ -13,7 +13,7 @@ export default function Doc() {
     useEffect(() => {
         if (router.isReady && docName) {
             console.log(docName);
-            fetch(`/api/getDocs?docName=${encodeURIComponent(docName)}`)
+            fetch(`/api/getDoc?docName=${encodeURIComponent(docName)}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('문서를 불러오는 데 실패했습니다.');
