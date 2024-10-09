@@ -59,7 +59,9 @@ export default function Doc() {
             </Head>
             <div id="navbar">
                 <div id="logo">
-                    <img src="https://jedenzero.github.io/alcze/imgs/알체_로고_색상.svg" alt="알체 로고"/>
+                    <a href="https://alcze.vercel.app">
+                        <img src="https://jedenzero.github.io/alcze/imgs/알체_로고_색상.svg" alt="알체 로고"/>
+                    </a>
                 </div>
                 <div id="inputbox">
                     <input
