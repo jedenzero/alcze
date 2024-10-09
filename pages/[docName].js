@@ -51,30 +51,6 @@ export default function Doc() {
         setResult(filteredResults.slice(0, 5));
     };
 
-    const parseMarkdown = (doc) => {
-        let theme = '';
-        if (doc.match(/^<<[^\n>]+>>\n/)) {
-            doc = doc.replace(/^<<([^\n>]+)>>\n/, (match, captured_theme) => {
-                theme = captured_theme;
-                return '';
-            });
-
-            const themeLink = document.createElement('link');
-            themeLink.rel = 'stylesheet';
-            themeLink.href = `https://jedenzero.github.io/alcze/themes/${theme}.css`;
-            document.head.appendChild(themeLink);
-            document.querySelector('#theme_default').disabled = true;
-        }
-
-        doc = marked.parse(doc);
-        doc = doc.replace(/<a href="([^"]+)">/g, '<a href="/$1">');
-        doc = doc.replace(/(?<=<a href="[^"]*)_(?=[^">]*">)/g, ' ');
-        doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="/$1">$1</a>');
-        doc = doc.replace(/<img src="([^"]+)"/g, '<img src="/imgs/$1"');
-        doc = `<h1>${docName}</h1>` + doc;
-        return doc;
-    };
-
     return (
         <div>
             <div id="navbar">
