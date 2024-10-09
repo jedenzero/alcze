@@ -56,6 +56,7 @@ export default function Doc() {
         <div>
             <Head>
                 <title>{docName ? docName : '대문'}</title>
+                <meta name="google-site-verification" content="Fb4dZfbsUFfHNH2547L2XC-Rc_80cWN8gcomQge5t7k"/>
             </Head>
             <div id="navbar">
                 <div id="logo">
