@@ -71,6 +71,7 @@ export default function Doc() {
         doc = doc.replace(/(?<=<a href="[^"]*)_(?=[^">]*">)/g, ' ');
         doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="/$1">$1</a>');
         doc = doc.replace(/<img src="([^"]+)"/g, '<img src="/imgs/$1"');
+        doc = `<h1>${docName}</h1>` + doc;
         return doc;
     };
 
