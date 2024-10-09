@@ -7,27 +7,29 @@ export default function Doc() {
     const [result, setResult] = useState([]);
     const [theme, setTheme] = useState('');
 
-    fetch(`/api/getDoc?docName=${encodeURIComponent('대문')}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('문서를 불러오는 데 실패했습니다.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            setContent(data.doc);
-            setTheme(data.theme);
-        })
-        .catch(() => {
-            setContent('<div class="danger">존재하지 않는 문서입니다.</div>');
-        });
-    
-    fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
-        .then(response => response.json())
-        .then(data => {
-            const documents = data.map(obj => obj['name'].replace('.md', ''));
-            setList(documents);
-        });
+    useEffect(() => {
+        fetch(`/api/getDoc?docName=${encodeURIComponent('대문')}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('문서를 불러오는 데 실패했습니다.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setContent(data.doc);
+                setTheme(data.theme);
+            })
+            .catch(() => {
+                setContent('<div class="danger">존재하지 않는 문서입니다.</div>');
+            });
+        
+        fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
+            .then(response => response.json())
+            .then(data => {
+                const documents = data.map(obj => obj['name'].replace('.md', ''));
+                setList(documents);
+            });
+    }, []);
     
     useEffect(() => {
         if (theme) {
