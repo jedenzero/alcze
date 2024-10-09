@@ -7,11 +7,12 @@ export default function Doc() {
     const [list, setList] = useState([]);
     const [result, setResult] = useState([]);
     const router = useRouter();
-    const { doc } = router.query;
+    const { docName } = router.query;
 
     useEffect(() => {
-        if (router.isReady && doc) {
-            fetch(`/docs/${doc}.md`)
+        if (router.isReady && docName) {
+            console.log(docName);
+            fetch(`/docs/${docName}.md`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('문서를 불러오는 데 실패했습니다.');
@@ -32,7 +33,7 @@ export default function Doc() {
                     setList(documents);
                 });
         }
-    }, [router.isReady, doc]);
+    }, [router.isReady, docName]);
 
     const search = (keyword) => {
         const filteredResults = list.filter(item => item.includes(keyword));
