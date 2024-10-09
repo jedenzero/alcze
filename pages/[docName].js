@@ -61,7 +61,7 @@ export default function Doc() {
 
             const themeLink = document.createElement('link');
             themeLink.rel = 'stylesheet';
-            themeLink.href = `/themes/${theme}.css`;
+            themeLink.href = `https://jedenzero.github.io/alcze/themes/${theme}.css`;
             document.head.appendChild(themeLink);
             document.querySelector('#theme_default').disabled = true;
         }
