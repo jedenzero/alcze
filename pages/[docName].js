@@ -78,7 +78,7 @@ export default function Doc() {
         <div>
             <div id="navbar">
                 <div id="logo">
-                    <img src="/imgs/알체_로고_색상.svg" alt="알체 로고"/>
+                    <img src="https://jedenzero.github.io/alcze/imgs/알체_로고_색상.svg" alt="알체 로고"/>
                 </div>
                 <div id="inputbox">
                     <input
