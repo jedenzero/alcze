@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import marked from 'marked';
 
 export default function Doc() {
     const [content, setContent] = useState('');
