@@ -27,7 +27,7 @@ export default function Doc() {
                     setContent('<div class="danger">존재하지 않는 문서입니다.</div>');
                 });
 
-            fetch(`https://api.github.com/repos/jedenzero/alcze/contents/public/docs`)
+            fetch(`https://api.github.com/repos/jedenzero/alcze/contents/docs`)
                 .then(response => response.json())
                 .then(data => {
                     const documents = data.map(obj => obj['name'].replace('.md', ''));
@@ -40,7 +40,7 @@ export default function Doc() {
         if (theme) {
             const themeLink = document.createElement('link');
             themeLink.rel = 'stylesheet';
-            themeLink.href = `/themes/${theme}.css`;
+            themeLink.href = `https://jedenzero.github.io/alcze/themes/${theme}.css`;
             document.head.appendChild(themeLink);
         }
     }, [theme]);
