@@ -13,7 +13,7 @@ export default function Doc() {
     useEffect(() => {
         if (router.isReady && docName) {
             console.log(docName);
-            fetch(`/api/getDoc?docName=${encodeURIComponent(docName ? docName : '대문')}`)
+            fetch(`/api/getDoc?docName=${encodeURIComponent(docName)}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('문서를 불러오는 데 실패했습니다.');
@@ -55,8 +55,7 @@ export default function Doc() {
     return (
         <div>
             <Head>
-                <title>{docName ? docName : '대문'}</title>
-                <meta name="google-site-verification" content="Fb4dZfbsUFfHNH2547L2XC-Rc_80cWN8gcomQge5t7k"/>
+                <title>{docName}</title>
             </Head>
             <div id="navbar">
                 <div id="logo">
