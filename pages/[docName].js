@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -12,7 +13,7 @@ export default function Doc() {
     useEffect(() => {
         if (router.isReady && docName) {
             console.log(docName);
-            fetch(`/api/getDoc?docName=${encodeURIComponent(docName)}`)
+            fetch(`/api/getDoc?docName=${encodeURIComponent(docName ? docName : '대문')}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('문서를 불러오는 데 실패했습니다.');
@@ -53,6 +54,9 @@ export default function Doc() {
 
     return (
         <div>
+            <Head>
+                <title>{docName ? docName : '대문'}</title>
+            </Head>
             <div id="navbar">
                 <div id="logo">
                     <img src="https://jedenzero.github.io/alcze/imgs/알체_로고_색상.svg" alt="알체 로고"/>
