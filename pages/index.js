@@ -55,7 +55,7 @@ export default function Doc() {
     return (
         <div>
             <Head>
-                <title>{'대문'}</title>
+                <title>대문 - ✨alcze</title>
                 <meta name="google-site-verification" content="Fb4dZfbsUFfHNH2547L2XC-Rc_80cWN8gcomQge5t7k"/>
             </Head>
             <div id="navbar">
