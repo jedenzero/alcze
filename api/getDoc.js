@@ -33,7 +33,7 @@ const parseMarkdown = (doc, docName) => {
     }
 
     doc = marked.parse(doc);
-    doc = doc.replace(/<a href="([^"]+)">/g, '<a href="/$1">');
+    doc = doc.replace(/<a href="(?!https:\/\/)([^"]+)">/g, '<a href="/$1">');
     doc = doc.replace(/(?<=<a href="[^"]*)_(?=[^">]*">)/g, ' ');
     doc = doc.replace(/\[\[([^\[\]\n]+)\]\]/g, '<a href="/$1">$1</a>');
     doc = doc.replace(/<img src="([^"]+)"/g, '<img src="/imgs/$1"');
