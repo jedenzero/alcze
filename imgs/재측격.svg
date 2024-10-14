@@ -1,55 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
+   xmlns="http://www.w3.org/2000/svg"
    width="3000"
    height="3000"
    viewBox="0 0 3000 3000"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-   sodipodi:docname="재측격.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
-     inkscape:zoom="0.17824983"
-     inkscape:cx="1032.259"
-     inkscape:cy="1130.4358"
-     inkscape:window-width="1920"
-     inkscape:window-height="1046"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+   id="svg"
+   >
+  <g id="layer">
     <path
-       id="path1"
+       id="cube"
        style="fill:none;stroke:#3c3c3c;stroke-width:30.2053"
        transform="matrix(1.6553411,0,0,1.6553411,29.072123,-102.26076)"
        d="m 1341.6738,1229.5191 -453.07877,261.5851 -453.07881,-261.5851 0,-523.17038 453.07881,-261.58517 453.07877,261.58518 z"
-       inkscape:label="cube" />
+       />
     <circle
-       style="fill:#f0c850;fill-opacity:1;stroke:none;stroke-width:50;stroke-dasharray:none;stroke-opacity:1"
-       id="path2"
+       id="sphere"
+       style="fill:#f0c850;"
        cx="2250"
        cy="1933.0129"
        r="500"
-       inkscape:label="sphere" />
+      />
   </g>
 </svg>
